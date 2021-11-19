@@ -1,4 +1,4 @@
-import { TypeormLoader } from "#/index";
+import { TypeormLoader, FilteredTypeormLoader } from "#/index";
 import { Field, ID, ObjectType } from "type-graphql";
 import {
   Column,
@@ -9,6 +9,7 @@ import {
   ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
+  SelectQueryBuilder,
 } from "typeorm";
 import { Lazy } from "../types/Lazy";
 import { Base } from "./Base";
@@ -44,6 +45,6 @@ export class PersonalComputer extends Base<PersonalComputer> {
   @Field((type) => [ApplicationSoftware])
   @ManyToMany((type) => ApplicationSoftware, (app) => app.installedComputers)
   @JoinTable()
-  @TypeormLoader()
+  @FilteredTypeormLoader((query, context) => { console.log('query', query); console.log('context', context);})
   installedApps: ApplicationSoftware[];
 }
