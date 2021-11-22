@@ -27,7 +27,8 @@
     "clean": "rimraf dist",
     "dev:typeorm": "ts-node-dev -r tsconfig-paths/register examples/typeorm/index.ts",
     "test": "jest",
-    "prepublishOnly": "npm run-script clean && npm run-script build"
+    "prepublishOnly": "npm run-script clean && npm run-script build",
+    "prepare": "npm run-script clean && npm run-script build"
   },
   "dependencies": {
     "dataloader": "^2.0.0",
