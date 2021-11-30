@@ -1,0 +1,59 @@
+{
+  "name": "type-graphql-dataloader",
+  "description": "A utility to use DataLoader with TypeGraphQL without fuss",
+  "version": "0.4.1-filter-query",
+  "author": {
+    "name": "Kazuaki Tanida",
+    "url": "https://github.com/slaypni"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slaypni/type-graphql-dataloader.git"
+  },
+  "keywords": [
+    "typescript",
+    "graphql",
+    "dataloader",
+    "typeorm"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slaypni/type-graphql-dataloader/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rimraf dist",
+    "dev:typeorm": "ts-node-dev -r tsconfig-paths/register examples/typeorm/index.ts",
+    "test": "jest",
+    "prepublishOnly": "npm run-script clean && npm run-script build"
+  },
+  "dependencies": {
+    "dataloader": "^2.0.0",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.1.13",
+    "typedi": "^0.8.0",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "@types/lodash": "^4.14.162",
+    "@types/node": "^14.11.8",
+    "@types/uuid": "^8.3.0",
+    "apollo-server-express": "^2.18.2",
+    "class-validator": "^0.12.2",
+    "graphql": "^15.3.0",
+    "graphql-request": "^3.1.0",
+    "jest": "^26.5.3",
+    "mikro-orm": "^4.1.1",
+    "rimraf": "^3.0.2",
+    "sqlite3": "^5.0.0",
+    "ts-jest": "^26.4.1",
+    "ts-node-dev": "^1.0.0-pre.64",
+    "tsconfig-paths": "^3.9.0",
+    "type-graphql": "^1.1.0",
+    "typeorm": "^0.2.32",
+    "typescript": "~4.0.7"
+  }
+}
